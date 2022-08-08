@@ -1,4 +1,6 @@
 import React from 'react'
+import Botao from '../components/botao'
+import Formulario from '../components/formulario'
 import Layout from '../components/layout'
 import Tabela from '../components/tabela'
 import Cliente from '../core/cliente'
@@ -28,10 +30,14 @@ function Home() {
     `}>
         <title>Aula NextJS</title>
         <Layout titulo="Cadastro Simples">
+          <div className='flex justify-end'>
+            <Botao cor='green' className='mb-4'>Novo Cliente</Botao>
+          </div>
           <Tabela clientes={clientes}
             clienteSelecionado={clienteSelecionado}
             clienteExcluido={clienteExcluido}
           />
+          <Formulario cliente={clientes[1]}></Formulario>
         </Layout>
     </div>
   )
